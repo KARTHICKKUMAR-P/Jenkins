@@ -41,6 +41,13 @@ pipeline {
                 }
             }
         }
+        stage('List Files in Workspace') {
+            steps {
+                script {
+                    sh 'ls -alh /var/lib/jenkins/workspace/ci-cd pipline'
+                }
+            }
+        }
 
         stage('Deploy using Docker Compose') {
             steps {
